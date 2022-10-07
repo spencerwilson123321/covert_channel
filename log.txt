@@ -1,5 +1,1 @@
-
-Key.ctrl
-'c'
-Key.ctrl
-'c'
+hello world, this is aweomsec
