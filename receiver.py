@@ -8,4 +8,4 @@ if __name__ == "__main__":
     sniff(filter="tcp and src host 10.0.0.159", prn=write_info)
     with open("log.txt", "a") as f:
         f.write("\n")
-    print("Data written to ./log.txt")
+    print("\nData written to ./log.txt")
