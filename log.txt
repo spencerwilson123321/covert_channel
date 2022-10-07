@@ -1,0 +1,5 @@
+
+Key.ctrl
+'c'
+Key.ctrl
+'c'
