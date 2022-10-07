@@ -7,4 +7,4 @@ def write_info(pkt):
         print(pkt)
 
 if __name__ == "__main__":
-    sniff(filter="src host 10.0.0.159", prn=write_info)
+    sniff(filter="tcp and src host 10.0.0.159", prn=write_info)
