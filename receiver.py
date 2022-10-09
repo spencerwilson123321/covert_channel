@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser("./receiver.py")
 parser.add_argument("source_host", help="The IPv4 address or hostname of the keylogged machine. The program will only sniff packets coming from this address.")
 args = parser.parse_args()
 
-def isValidIPv4(address: str) -> (bool, str):
+def isValidIPv4(address: str):
     try:
         ip = ip_address(address)
         if isinstance(ip, IPv6Address):
